@@ -1,0 +1,222 @@
+header{
+    .logo {
+        @include size(147px,24px);
+        @include pad{
+            @include size(245px,40px)
+        } 
+        a{
+            text-indent: 101%;
+        }
+    }
+
+    .navbar-nav{
+        height: 100%;
+        align-items: center;
+        justify-content: center;
+        a{
+            font-size: 80px;
+            @include pad{
+                font-size: 16px;
+            }
+        }
+    }
+
+    .navbar-collapse{
+        height: calc(100vh - 79px);
+        flex-basis:100%;
+        // align-items: center;
+
+        position: absolute;
+        top: 79px;
+        left: 50%;
+        transform: translateX(-50%);
+        width: calc(100% + 24px);
+        background-color: $dark;
+        @include pad{
+            height: unset;
+            position: unset;
+            transform: unset;
+            width: unset;
+        }
+    }
+
+    // .nav-collapse{
+    //     height: calc(100vh - 54px);
+    //     flex-basis:100%;
+    //     align-items: center;
+
+    //     ↓關
+    //     display: flex;
+    //     position:absolute;
+    //     top: 50%;
+    //     @include pad{
+    //         height: unset;
+    //     }   
+    // }
+}
+
+.banner-icons{
+    margin-top: 100px;
+    overflow: hidden;
+    .banner-icon{
+        @include size(117px,117px);
+        @include pad{
+            @include size(180px,180px);
+        }
+        transform: translateY(100%);
+        animation: fadeIn 4s ease-in-out infinite;
+        @keyframes fadeIn{
+            0%{
+                transform: translateY(100%);
+            }
+            25%{
+                transform: translateY(0);
+            }
+            50%{
+                transform: translateY(0);
+            }
+            75%{
+                transform: translateY(-100%);
+            }
+            100%{
+                transform: translateY(-100%);
+            }
+        }
+        &1{
+            animation-delay:1s;
+        }
+        &2{
+            animation-delay:.5s;
+        }
+    }
+}
+
+.service{
+    &-icon{
+        @include size(80px,80px);
+    }
+}
+
+.collaboration{
+    @keyframes brandScroll {
+        from{
+            transform: translateX(0);
+        }
+        to{
+            transform: translateX(-45%);
+        }
+    }
+    &List1{
+        animation: brandScroll 6s linear infinite alternate-reverse;
+    }
+    &List2{
+        animation: brandScroll 6s linear -6s infinite alternate-reverse;
+    }
+
+    &-list::after{
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background: linear-gradient(90deg,$dark,transparent,$dark);
+    }
+
+    &-item{
+        @include size(160px,40px);
+    }
+
+    .client-comment{
+        height: 400px;
+        background-color: rgba(225,225,225,.08);
+        &-mobile{
+        height: unset;
+        }
+    }
+
+    .client-star{
+        @include size(16px,16px);
+    }
+
+    .client-img{
+        @include size(48px,48px);
+    }
+
+    .client-swiper{
+        @include pc {
+            display: none;
+        }
+        .swiper {
+            width: 100%;
+            height: 100%;
+            --swiper-theme-color: #fff;
+          }
+        
+          .swiper-slide {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+          }
+
+          .swiper-pagination{
+            bottom: 0 !important;
+        }
+        
+        .swiper-pagination-bullet{
+            background-color: #fff;
+        }
+        
+    }
+}
+
+.tools{
+    color: $dark;
+    border-radius: 20px;
+    @include pad{
+        border-radius: 160px;
+    }
+    .form-control:focus{
+        box-shadow: none;
+    }
+
+    .aiFilter{
+        width: 240px;
+        li:hover{
+            background-color: #F2F2F2;
+        }
+    }
+
+    &-active{
+        background-color: #F2F2F2;
+    }
+
+    .tools-tab:hover{
+        background-color: #F2F2F2;
+    }
+
+    .overflow-scrollX{
+        @include pc {
+            overflow-x: hidden;
+        }
+    }
+
+    .card:hover img{
+        transform: scale(1.5);
+        transition: .5s;
+    }
+
+    .page-link{
+        color: $dark;
+        &:hover,&.active{
+            color: $white;
+            background-color: $dark;
+        }
+       
+    }
+
+}
+
+.footer-logo{
+    @include size(245px,40px);
+}

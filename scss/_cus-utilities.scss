@@ -1,0 +1,56 @@
+// $amount:20;
+// @while $amount <= 100 {
+//     .color-dark#{$amount} {
+//         background-color: darken($white, $amount * 1%);
+//     }
+//     $amount: $amount + 20;
+// }
+
+// $color-dark-array: (
+//     80: #525252,
+//     60: #919191,
+//     40: #D1D1D1,
+//     20: #F2F2F2,
+// );
+
+// @each $key, $value in $color-dark-array{
+//     .color-dark#{$key}{
+//         background: $value;
+//     }
+// }
+
+// ----------test-------------
+
+// $spacerAmount:4px;
+// $max: 20;
+// $spacerAmount:4px;
+// @for $i from 0 through $max {
+//   .m-#{$i}{
+//     margin: $i * $spacerAmount !important;
+//   }
+// }
+
+$zindexMax:5;
+@for $i from 1 through $zindexMax{
+  .zindex-#{$i}{
+    z-index: $i;
+  }
+}
+
+.link-hover:hover{
+    background-color: $white;
+    color: $dark !important;
+}
+
+
+.material-symbols-outlined.icon-fill{
+  font-variation-settings:
+  'FILL' 1,
+  'wght' 400,
+  'GRAD' 0,
+  'opsz' 48
+}
+
+.overflow-scrollX{
+  overflow-x: scroll;
+}
